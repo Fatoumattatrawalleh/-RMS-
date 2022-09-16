@@ -20,12 +20,7 @@ mongoose.connect(
   }
   )
 
-try{
-  mongoose.connect(URI)
-  console.log('connected');
-}catch (error) {
-  console.log('not connected');
-}
+
 
 try {
   connect() // Invoking the connect function
