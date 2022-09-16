@@ -11,13 +11,27 @@ app.use(express.json())
 
 const URI = process.env.MONGODB_URI
 
-mongoose.connect(URI)
+mongoose.connect(
+  URI,
+  {
+    useNewUrlParser: true, 
+      useUnifiedTopology: true,
+      autoIndex: false
+  }
+  )
 
 try{
   mongoose.connect(URI)
   console.log('connected');
 }catch (error) {
   console.log('not connected');
+}
+
+try {
+  connect() // Invoking the connect function
+  console.log('connected to MongoDB');
+} catch (error) {
+  console.log('error connection to MongoDB:', error.message)
 }
 
 
