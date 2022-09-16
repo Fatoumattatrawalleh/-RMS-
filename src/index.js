@@ -1,10 +1,28 @@
+require('dotenv').config()
+const mongoose = require('mongoose')
+
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT
 
 const middleware = require('./utilities/middleware')
 
 app.use(express.json())
+
+const URI = process.env.MONGODB_URI
+
+mongoose.connect(URI)
+
+try{
+  mongoose.connect(URI)
+  console.log('connected');
+}catch (error) {
+  console.log('not connected');
+}
+
+
+
+
 
 
 
