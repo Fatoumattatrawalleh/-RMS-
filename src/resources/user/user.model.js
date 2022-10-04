@@ -1,12 +1,18 @@
 const mongoose = require( 'mongoose' )
 
-const menuSchema = mongoose.Schema({
-    menu_name:{
+const userSchema = mongoose.Schema({
+    name:{
         type : String,
-    }
+    },
+   email:{
+    type : String,
+   },
+   password :{
+    type: String,
+   }
 	
 } )
 
-const Menu= mongoose.model( 'menu', menuSchema )
+const User= mongoose.model( 'user', UserSchema )
 
-module.exports = Menu
+module.exports = User
